@@ -21,11 +21,11 @@ def goldilocks(bedSize):
         bedSize (int): the size of the proposed bed
     """
     if bedSize<140:
-        print("Too small")
+        print("Too small.")
     elif bedSize>150:
-        print("Too large")
+        print("Too large.")
     else:
-        print("Just right")
+        print("Just right. :)")
 
 goldilocks(139)
 goldilocks(140)
