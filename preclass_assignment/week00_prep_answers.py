@@ -96,8 +96,10 @@ def clean_pitch(x, status):
     """
     cleaned_x=[]
     for index in range(len(x)):
-        if (x[index]>90 or x[index]<0) and status[index]==1:
+        if (x[index]>90 or x[index]<0) and status[index]>0:
             cleaned_x.append(-999)
+        elif status[index]<0:
+            cleaned_x.append("Invalid Status")
         else:
             cleaned_x.append(x[index])
     return cleaned_x
