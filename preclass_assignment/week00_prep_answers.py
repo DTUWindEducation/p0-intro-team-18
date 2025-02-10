@@ -89,7 +89,7 @@ def clean_pitch(x, status):
 
     Args:
         x (list): list of angles
-        status (list): list of 0s and 1s
+        status (list): list of whether a measurement is valid
         
     Returns:
         list: a list of cleaned angle values
