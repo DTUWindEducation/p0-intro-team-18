@@ -35,8 +35,11 @@ print(fibonacci_stop(30))
 def clean_pitch(l1, l2):
     l3 = l1.copy()
     for i, num in enumerate(l2):
-        if num == 1:
-            l3[i] = -999
+        if num > 0:
+            if l3[i] < 0 or l3[i] > 90:
+                l3[i] = -999
+            else:
+                l2[i] = 0
     return l3
 
 x = [-1, 2, 6, 95]  # "raw" pitch angle at four time steps
