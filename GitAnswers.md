@@ -8,7 +8,7 @@ They are all version control platforms for managing code. GitHub is primarily fo
 Using Git can be particularly beneficial for individual use due to its flexibility, simplicity, and control over version control processes. This way, one can manage their code locally, work offline, and customize workflows without being tied to a specific platform like GitLab.
 
 4. What are the steps to update the GitLab server with some changes I made on my computer?
-Firstly, stage the changes to be included in the next commit by using git add <file>. Then, commit the staged changes to the local repository with git commit -m "message". Finally, push the changes to the server using git push. 
+Firstly, stage the changes to be included in the next commit by using git add <file>. Then, commit the staged changes to the local repository with git commit -m "message". Pull to avoid conflicts, using git pull. Finally, push the changes to the server using git push. 
 
 5. What is a branch and why would I use one?
 (Hubert)
