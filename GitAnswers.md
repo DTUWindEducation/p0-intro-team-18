@@ -11,16 +11,35 @@ Using Git can be particularly beneficial for individual use due to its flexibili
 Firstly, stage the changes to be included in the next commit by using git add <file>. Then, commit the staged changes to the local repository with git commit -m "message". Pull to avoid conflicts, using git pull. Finally, push the changes to the server using git push. 
 
 5. What is a branch and why would I use one?
-(Hubert)
+A branch is a new/separate version of the main repository, useful in big projects, where you want to work in isolation from the main codebase. It allows you to work on different parts of a project without impacting the main branch.
 
 6. How could you visualize a branch with 3 commits, and then another branch that breaks off after the second commit and has a single commit?
-(Hubert)
+![Visualization](GitAnswers_pic.png)
 
 7. Give an example of a set of git commands that would result in a merge conflict.
-(Hubert)
+echo "Hello, world!" > file.txt
+git add file.txt
+git commit -m "Initial commit"
+
+# Create and switch to a new branch
+git checkout -b new-branch
+
+# Modify the file in new-branch
+echo "This is a change from new-branch." > file.txt
+git commit -am "Change from new-branch"
+
+# Switch back to main branch
+git checkout main
+
+# Modify the same file differently in main
+echo "This is a change from main branch." > file.txt
+git commit -am "Change from main branch"
+
+# Try to merge new-branch into main (conflict will occur)
+git merge new-branch
 
 8. Is Git suitable for latex documents?
-(Hubert)
+Git is suitable for LaTeX documents, since they are non-binary files.
 
 9. Should I from now on version my word and powerpoint slides using git? Why/why not?
 While it is advantageous to have version control in these documents, word documents (.doc and .docx) and powerpoint slides (.ppt .pptx) can use binary formats to store information. These file types are harder for Git to compress meaning that the repository will likely become much larger in size. As such Git is not recommended for word and powerpoint slides.   
