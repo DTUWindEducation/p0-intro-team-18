@@ -18,9 +18,25 @@ def test_greet(capsys):
 def test_goldilocks(capsys):
     """Check goldilocks returns expected output"""
     # given
+    test_size1=139
+    test_size2=140
+    test_size3=151
+    test_size4=150
     # when
+    fxn.goldilocks(test_size1) 
+    captured1 = capsys.readouterr()
+    fxn.goldilocks(test_size2) 
+    captured2 = capsys.readouterr()
+    fxn.goldilocks(test_size3) 
+    captured3 = capsys.readouterr()
+    fxn.goldilocks(test_size4) 
+    captured4 = capsys.readouterr()
     # then
-    assert False  # TODO! Update the contents of this function so it correctly tests goldilocks
+    assert captured1.out == 'Too small.\n'
+    assert captured2.out == 'Just right. :)\n'
+    assert captured3.out == 'Too large.\n'
+    assert captured4.out == 'Just right. :)\n'
+
 
 
 def test_square_list():
@@ -37,15 +53,22 @@ def test_square_list():
 def test_fibonacci_stop():
     """Check fibonacci functions works as expected."""
     # given
-    # given
+    inp = 30
+    exp_out = [1,1,2,3,5,8,13,21]
     # when
+    out = fxn.fibonacci_stop(inp)
     # then
-    assert False  # TODO! Update the contents of this function so it correctly tests fibonacci_stop
+    assert exp_out == out  # throw error if actual and expected output don't match
 
 
 def test_clean_pitch():
     """Check clean_pitch works as expected."""
     # given
+    x = [-1, 2, 6, 95]  # "raw" pitch angle at four time steps
+    status = [1, 0, 0, 0]  # status signal
+    
+    exp_out=[-999, 2, 6, 95]
     # when
+    out = fxn.clean_pitch(x, status)  # actual output
     # then
-    assert False  # TODO! Update the contents of this function so it correctly tests clean_pitch
+    assert exp_out == out
