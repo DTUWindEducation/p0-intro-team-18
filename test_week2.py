@@ -62,6 +62,11 @@ def test_fibonacci_stop():
 def test_clean_pitch():
     """Check clean_pitch works as expected."""
     # given
+    x = [-1, 2, 6, 95]  # "raw" pitch angle at four time steps
+    status = [1, 0, 0, 0]  # status signal
+    
+    exp_out=[-999, 2, 6, 95]
     # when
+    out = fxn.clean_pitch(x, status)  # actual output
     # then
-    assert False  # TODO! Update the contents of this function so it correctly tests clean_pitch
+    assert exp_out == out
